@@ -1,0 +1,264 @@
+
+---
+---
+
+<div class="bubble-background" aria-hidden="true">
+  <div class="bubble-field">
+    <span class="bubble" style="--size: 76px; --left: 8%; --top: 16%; --delay: -2s; --duration: 12s; --depth: 1.1;">
+      <span class="bubble-surface"></span>
+    </span>
+    <span class="bubble" style="--size: 38px; --left: 18%; --top: 65%; --delay: -6s; --duration: 10s; --depth: 0.7;">
+      <span class="bubble-surface"></span>
+    </span>
+    <span class="bubble" style="--size: 112px; --left: 30%; --top: 34%; --delay: -4s; --duration: 16s; --depth: 1.4;">
+      <span class="bubble-surface"></span>
+    </span>
+    <span class="bubble" style="--size: 54px; --left: 42%; --top: 82%; --delay: -8s; --duration: 13s; --depth: 0.8;">
+      <span class="bubble-surface"></span>
+    </span>
+    <span class="bubble" style="--size: 66px; --left: 54%; --top: 12%; --delay: -3s; --duration: 15s; --depth: 1.2;">
+      <span class="bubble-surface"></span>
+    </span>
+    <span class="bubble" style="--size: 30px; --left: 65%; --top: 55%; --delay: -5s; --duration: 9s; --depth: 0.6;">
+      <span class="bubble-surface"></span>
+    </span>
+    <span class="bubble" style="--size: 92px; --left: 78%; --top: 24%; --delay: -7s; --duration: 14s; --depth: 1.3;">
+      <span class="bubble-surface"></span>
+    </span>
+    <span class="bubble" style="--size: 48px; --left: 91%; --top: 70%; --delay: -1s; --duration: 11s; --depth: 0.9;">
+      <span class="bubble-surface"></span>
+    </span>
+    <span class="bubble" style="--size: 42px; --left: 4%; --top: 88%; --delay: -9s; --duration: 13s; --depth: 0.8;">
+      <span class="bubble-surface"></span>
+    </span>
+    <span class="bubble" style="--size: 70px; --left: 23%; --top: 9%; --delay: -5s; --duration: 17s; --depth: 1.1;">
+      <span class="bubble-surface"></span>
+    </span>
+    <span class="bubble" style="--size: 36px; --left: 36%; --top: 58%; --delay: -2s; --duration: 10s; --depth: 0.6;">
+      <span class="bubble-surface"></span>
+    </span>
+    <span class="bubble" style="--size: 84px; --left: 48%; --top: 91%; --delay: -7s; --duration: 16s; --depth: 1.2;">
+      <span class="bubble-surface"></span>
+    </span>
+    <span class="bubble" style="--size: 44px; --left: 60%; --top: 31%; --delay: -4s; --duration: 12s; --depth: 0.8;">
+      <span class="bubble-surface"></span>
+    </span>
+    <span class="bubble" style="--size: 118px; --left: 72%; --top: 78%; --delay: -10s; --duration: 18s; --depth: 1.4;">
+      <span class="bubble-surface"></span>
+    </span>
+    <span class="bubble" style="--size: 34px; --left: 86%; --top: 8%; --delay: -3s; --duration: 11s; --depth: 0.6;">
+      <span class="bubble-surface"></span>
+    </span>
+    <span class="bubble" style="--size: 58px; --left: 96%; --top: 43%; --delay: -6s; --duration: 14s; --depth: 1;">
+      <span class="bubble-surface"></span>
+    </span>
+  </div>
+</div>
+
+<style>
+  .bubble-background {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+    contain: strict;
+  }
+
+  .bubble-field {
+    position: absolute;
+    inset: -30px;
+    overflow: hidden;
+  }
+
+  .bubble {
+    position: absolute;
+    left: var(--left);
+    top: var(--top);
+    width: var(--size);
+    aspect-ratio: 1;
+    opacity: 0.48;
+    animation: bubble-float var(--duration) ease-in-out var(--delay) infinite alternate;
+    will-change: transform;
+  }
+
+  .bubble-surface {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transform: translate3d(var(--shift-x, 0px), var(--shift-y, 0px), 0);
+    transition: transform 180ms ease-out;
+    background:
+      radial-gradient(
+        ellipse at 28% 22%,
+        rgba(255, 255, 255, 0.98) 0%,
+        rgba(255, 255, 255, 0.66) 5%,
+        transparent 19%
+      ),
+      radial-gradient(
+        ellipse at 68% 78%,
+        rgba(255, 47, 146, 0.24),
+        transparent 42%
+      ),
+      radial-gradient(
+        ellipse at 28% 75%,
+        rgba(128, 0, 232, 0.23),
+        transparent 48%
+      ),
+      radial-gradient(
+        circle at 36% 30%,
+        rgba(255, 255, 255, 0.78),
+        rgba(221, 195, 255, 0.24) 37%,
+        rgba(255, 47, 146, 0.15) 66%,
+        rgba(128, 0, 232, 0.34) 100%
+      );
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow:
+      inset -7px -9px 18px rgba(128, 0, 232, 0.13),
+      inset 5px 5px 12px rgba(255, 255, 255, 0.9),
+      0 8px 24px rgba(128, 0, 232, 0.08),
+      0 0 18px rgba(255, 47, 146, 0.08);
+  }
+
+  .bubble:nth-child(3n) .bubble-surface {
+    background:
+      radial-gradient(ellipse at 27% 22%, white 0%, rgba(255,255,255,.65) 6%, transparent 20%),
+      radial-gradient(circle at 35% 30%, rgba(255,255,255,.8), rgba(184,220,255,.32) 42%, rgba(128,0,232,.25) 100%);
+  }
+
+  .bubble:nth-child(3n + 1) .bubble-surface {
+    background:
+      radial-gradient(ellipse at 27% 22%, white 0%, rgba(255,255,255,.65) 6%, transparent 20%),
+      radial-gradient(circle at 35% 30%, rgba(255,255,255,.8), rgba(255,210,235,.34) 42%, rgba(255,47,146,.24) 100%);
+  }
+
+  @keyframes bubble-float {
+    0% {
+      transform: translate3d(-8px, 12px, 0) rotate(-5deg);
+    }
+    50% {
+      transform: translate3d(12px, -14px, 0) rotate(4deg);
+    }
+    100% {
+      transform: translate3d(-4px, -28px, 0) rotate(-2deg);
+    }
+  }
+
+  @media (max-width: 700px) {
+    .bubble {
+      opacity: 0.34;
+    }
+
+    .bubble:nth-child(even) {
+      display: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .bubble {
+      animation: none;
+    }
+
+    .bubble-surface {
+      transition: none;
+    }
+  }
+</style>
+
+
+<script>
+  const initBubbles = () => {
+    const field = document.querySelector(".bubble-field");
+    if (!field || field.dataset.ready === "true") return;
+
+    field.dataset.ready = "true";
+
+    const bubbles = Array.from(
+      field.querySelectorAll(".bubble")
+    ).map((element, index) => ({
+      element,
+      surface: element.querySelector(".bubble-surface"),
+      index,
+      x: 0,
+      y: 0,
+      targetX: 0,
+      targetY: 0,
+      speed: 0.045 + (index % 5) * 0.018,
+      strength: 0.65 + (index % 4) * 0.3,
+    }));
+
+    const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    const finePointer = window.matchMedia(
+      "(hover: hover) and (pointer: fine)"
+    ).matches;
+
+    if (reducedMotion || !finePointer) return;
+
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let active = true;
+
+    window.addEventListener("pointermove", (event) => {
+      mouseX = event.clientX;
+      mouseY = event.clientY;
+      active = true;
+    }, { passive: true });
+
+    window.addEventListener("pointerleave", () => {
+      mouseX = window.innerWidth / 2;
+      mouseY = window.innerHeight / 2;
+    });
+
+    function animate() {
+      bubbles.forEach((bubble) => {
+        const rect = bubble.element.getBoundingClientRect();
+
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+
+        const dx = mouseX - centerX;
+        const dy = mouseY - centerY;
+
+        // Las burbujas cercanas reaccionan con más intensidad.
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        const influence = Math.max(0, 1 - distance / 650);
+
+        // Se desplazan hacia el cursor con distinta intensidad.
+        bubble.targetX = dx * influence * 0.48 * bubble.strength;
+        bubble.targetY = dy * influence * 0.48 * bubble.strength;
+
+        // Movimiento elástico y fluido.
+        bubble.x += (bubble.targetX - bubble.x) * bubble.speed;
+        bubble.y += (bubble.targetY - bubble.y) * bubble.speed;
+
+        if (bubble.surface) {
+          bubble.surface.style.setProperty(
+            "--shift-x",
+            `${bubble.x.toFixed(2)}px`
+          );
+
+          bubble.surface.style.setProperty(
+            "--shift-y",
+            `${bubble.y.toFixed(2)}px`
+          );
+        }
+      });
+
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initBubbles, {
+      once: true,
+    });
+  } else {
+    initBubbles();
+  }
+</script>
